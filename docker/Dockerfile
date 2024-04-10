@@ -14,10 +14,12 @@ RUN apk add --no-cache libffi-dev \
     && apk del libffi-dev \
     && npm install pm2 -g \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/*
+
+# NASTOOL_AUTO_UPDATE 自动化更新 NASTOOL_AUTO_UPDATE=false取消自动化更新
 ENV LANG="C.UTF-8" \
     TZ="Asia/Shanghai" \
     NASTOOL_CONFIG="/config/config.yaml" \
-    NASTOOL_AUTO_UPDATE=true \
+    NASTOOL_AUTO_UPDATE=false \
     NASTOOL_CN_UPDATE=true \
     NASTOOL_VERSION=master \
     PS1="\u@\h:\w \$ " \
